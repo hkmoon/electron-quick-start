@@ -4,8 +4,29 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-packager . --out=dist --overwrite --platform=darwin --arch=x64"
   },
+  "files": [
+    "main.js",
+    "index.html",
+    "index.css",
+    "graph1.html",
+    "d3jsGraph.js",
+    "graph2.html",
+    "plotly.js",
+    "graph3.html",
+    "webgl.js",
+    "display.js",
+    "examples.js",
+    ".glslify/**",
+    "image1.html",
+    "tiff.js",
+    "openTiff.js",
+    "image2.html",
+    "openMultiTiff.js",
+    "images/**"
+  ],
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
@@ -60,6 +81,7 @@
   },
   "devDependencies": {
     "electron": "^1.4.1",
-    "tape": "^3.5.0"
+    "tape": "^3.5.0",
+    "electron-packager": "^8.0.0"
   }
 }

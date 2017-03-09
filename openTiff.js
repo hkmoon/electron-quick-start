@@ -1,7 +1,7 @@
 var fs = require('fs');
 var Tiff = require('./tiff');
 
-var filename = "images/lena-std.tiff";
+var filename = __dirname + "/images/lena-std.tiff";
 
 fs.readFile(filename, function (err, data) {
   if (err) { throw err; }

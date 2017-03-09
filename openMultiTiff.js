@@ -1,7 +1,7 @@
 var fs = require('fs');
 var Tiff = require('./tiff');
 
-var filename = "images/flybrain.tiff";
+var filename = __dirname + "/images/flybrain.tiff";
 
 fs.readFile(filename, function (err, data) {
   if (err) { throw err; }
