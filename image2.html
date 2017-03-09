@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <label for="slider">Stack</label>
+    <input id="slider" type="range" min="0" max="100" value="0" step="1" oninput="tiffUpdate(value)">
+    <output for="slider" id="stack">0</output>
+
+    <div id="parent">
+      <canvas id="canvas"></canvas>
+    </div>
+
+  </body>
+  <script>
+    var tiff;
+
+    function tiffUpdate(idx) {
+       document.querySelector('#stack').value = idx;
+       tiff.setDirectory(idx);
+
+       var container = document.getElementById('parent');
+
+       while (container.hasChildNodes()) {
+            container.removeChild(container.lastChild);
+       }
+
+       container.appendChild(tiff.toCanvas())
+    }
+
+    require('./openMultiTiff.js');
+  </script>
+</html>
