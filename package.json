@@ -23,6 +23,9 @@
    ]
   },
   "dependencies": {
+    "gl": "^4.0.3",
+    "d3": "^4.7.1",
+    "plotly.js": "^1.24.1",
     "a-big-triangle": "^1.0.0",
     "babelify": "^5.0.4",
     "bl": "^0.9.4",
