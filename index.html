@@ -5,15 +5,109 @@
     <title>Hello World!</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1>Power of Electron</h1>
     <!-- All of the Node.js APIs are available in this renderer process. -->
     We are using Node.js <script>document.write(process.versions.node)</script>,
     Chromium <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
+    <br/>
+    <br/>
+    <br/>
   </body>
 
   <script>
     // You can also require other files to run in this process
-    require('./renderer.js')
+    var button = document.createElement('button');
+    button.textContent = "Show a d3.js Graph";
+    document.body.appendChild(button)
+    document.write("<br/>")
+
+    const BrowserWindow = require('electron').remote.BrowserWindow;
+    const path = require('path')
+    const url = require('url')
+
+    button.addEventListener('click', function() {
+      var graphWindow = new BrowserWindow({width: 600, height: 400})
+
+      // and load the graph.html of the app.
+      graphWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'graph1.html'),
+        protocol: 'file:',
+        slashes: true
+      }))
+    })
+
+    button = document.createElement('button');
+    button.textContent = "Show a plotly graph window";
+    document.body.appendChild(button)
+    document.write("<br/>")
+
+    button.addEventListener('click', function() {
+      var graphWindow = new BrowserWindow({width: 678, height: 379})
+
+      // and load the graph.html of the app.
+      graphWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'graph2.html'),
+        protocol: 'file:',
+        slashes: true
+      }))
+
+      // graphWindow.webContents.openDevTools()
+    })
+
+    button = document.createElement('button');
+    button.textContent = "Show a webgl window";
+    document.body.appendChild(button)
+    document.write("<br/>")
+
+    button.addEventListener('click', function() {
+      var graphWindow = new BrowserWindow({width: 678, height: 379})
+
+      // and load the graph.html of the app.
+      graphWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'graph3.html'),
+        protocol: 'file:',
+        slashes: true
+      }))
+
+      // graphWindow.webContents.openDevTools()
+    })
+
+    button = document.createElement('button');
+    button.textContent = "Show a Tiff window";
+    document.body.appendChild(button)
+    document.write("<br/>")
+
+    button.addEventListener('click', function() {
+      var graphWindow = new BrowserWindow({width: 678, height: 379})
+
+      // and load the graph.html of the app.
+      graphWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'image1.html'),
+        protocol: 'file:',
+        slashes: true
+      }))
+
+      // graphWindow.webContents.openDevTools()
+    })
+
+    button = document.createElement('button');
+    button.textContent = "Show a Multipage-Tiff window";
+    document.body.appendChild(button)
+    document.write("<br/>")
+
+    button.addEventListener('click', function() {
+      var graphWindow = new BrowserWindow({width: 678, height: 379})
+
+      // and load the graph.html of the app.
+      graphWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'image2.html'),
+        protocol: 'file:',
+        slashes: true
+      }))
+
+      graphWindow.webContents.openDevTools()
+    })
+
   </script>
 </html>
