@@ -109,5 +109,23 @@
       graphWindow.webContents.openDevTools()
     })
 
+    button = document.createElement('button');
+    button.textContent = "Show Fabric.js";
+    document.body.appendChild(button)
+    document.write("<br/>")
+
+    button.addEventListener('click', function() {
+      var graphWindow = new BrowserWindow({width: 678, height: 800})
+
+      // and load the graph.html of the app.
+      graphWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'canvas1.html'),
+        protocol: 'file:',
+        slashes: true
+      }))
+
+      // graphWindow.webContents.openDevTools()
+    })
+
   </script>
 </html>
